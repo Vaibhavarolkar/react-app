@@ -15,7 +15,7 @@ handleInputChange = (event) => {
 handleSubmit = (event) => {
    event.preventDefault();
    const { email, password } = this.state;
-firebase
+     firebase
      .auth()
      .signInWithEmailAndPassword(email, password)
      .then((user) => {
@@ -32,12 +32,8 @@ firebase
         <div>
           <h2 className="mb-4">Log In</h2>
         </div>
-       {error ? (
-           <div>
-             <div>{error.message}</div>
-           </div>
-       ) : null}
          <div>
+          {error && <p className="text-danger">{error.message}</p>}
            <form onSubmit={this.handleSubmit}>
              <div className="form-field">
               <input type="text" name="email" placeholder="Email" className="form-control" value={email} onChange={this.handleInputChange} />

@@ -35,7 +35,7 @@ class PasswordForget extends Component {
         const { email, error } = this.state;
         return(
             <>
-                {error && <p>{error.message}</p>}
+                {error && <p className="text-danger">{error.message}</p>}
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-field">
                         <input
