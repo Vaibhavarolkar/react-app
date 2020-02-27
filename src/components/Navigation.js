@@ -4,6 +4,7 @@ import Home from './Home';
 import Login from './Login';
 import Register from './Register';
 import Dashboard from './Dashboard';
+import PasswordForget from './PasswordForget';
 import ProtectedRoute from './ProtectedRoute';
 import firebase from 'firebase';
 
@@ -21,7 +22,7 @@ class Navigation extends Component {
                 </span>
               ) : (
                 <span>
-                  <NavLink to="/login">Login</NavLink>
+                  <NavLink to="/login">Login</NavLink>                 
                   <NavLink to="/register">Register</NavLink>
                 </span>
               )}
@@ -30,6 +31,7 @@ class Navigation extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route authenticated={this.props.authenticated} path="/login" component={Login} />
+            <Route path="/fg-password" component={PasswordForget} />
             <Route path="/register" component={Register} />
             <ProtectedRoute authenticated={this.props.authenticated} path="/dashboard" component={Dashboard} />
           </Switch>

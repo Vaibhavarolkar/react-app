@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import PasswordForget from './PasswordForget';
 import firebase from '../firebase';
 class Login extends Component {
  state = {
@@ -52,6 +54,9 @@ firebase
             </div>           
             <div className="">
               <button className="btn btn-primary">Log In</button>
+            </div>
+            <div className="mt-3">
+              <NavLink to="/fg-password">Forgot Password?</NavLink>
             </div>
            </form>
          </div>
